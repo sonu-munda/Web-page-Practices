@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OBJECT LEARNING</title>
+    <style>
+        h1{text-align:center;}
+        div {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>REPORT<hr></h1>
+    <div><p style="font-weight: 700;">Name :</p>
+    <p id="name_s"></p></div>
+
+   <div > <p style="font-weight: 700;">Age :</p><p id="age_2"></p></div>
+    <div ><p style="font-weight: 700;">Height :</p><p id="height_h"></p></div>
+    <div ><p style="font-weight: 700;">Width :</p><p id="width_w"></p></div>
+    <div ><p style="font-weight: 700;">Leg :</p> <p id="leg_l"></p></div>
+    <div ><p style="font-weight: 700;">Hand :</p> <p id="hand_h"></p></div>
+    <div ><p style="font-weight: 700;">Head :</p> <p id="head_h"></p></div>
+    <div ><p style="font-weight: 700;">Ear :</p> <p id="ear_e"></p></div>
+    
+    <div>Health : 
+    <div id="status_s" style="width: 16px; margin-left: 8px; border-radius: 10px;  height: 16px; background-color: red;"></div>
+    </div>
+    
+    
+    
+    
+</body>
+<script>
+    let male = {
+        "status":"Success",
+        "age":26,
+        "name":"Sanu",
+        "feature":{
+            "height":5.5,
+            "width":2,
+            "color":"green",
+            "leg":2,
+            "hand":2,
+            "head":1,
+            "ear":2,
+            "status":"NORMAL"
+        }
+    };
+   
+//console.log(male["feature"]["status"]);
+let name_e =document.getElementById("name_s");
+    name_e.innerText = male["name"];
+
+let age_g= document.getElementById("age_2");
+    age_g. innerText=male["age"];
+
+let height=document.getElementById("height_h");
+    height.innerText=male["feature"]["height"];
+
+let width=document.getElementById("width_w");
+    width.innerText=male["feature"]["width"];
+
+let leg=document.getElementById("leg_l");
+    leg.innerText=male["feature"]["leg"];
+
+let hand=document.getElementById("hand_h");
+    hand.innerText=male["feature"]["hand"];
+
+let head=document.getElementById("head_h");
+    head.innerText=male["feature"]["head"];
+
+let ear=document.getElementById("ear_e");
+    ear.innerText=male["feature"]["ear"];
+
+let  statusdiv=document.getElementById("status_s");
+
+    if(male["feature"]["status"]=="NORMAL")
+    {
+        statusdiv.style.backgroundColor="green";
+    }
+    else{
+        statusdiv.style.backgroundColor="red";
+        
+
+    }
+</script>
+
+</html>

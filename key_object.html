@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>PROFILE</title>
+    </head>
+    <body>
+        <div style="display:flex;">
+            <img src="" width="200" alt="img" style="border-radius:75%;" id="pro_i"/>
+
+             <h4 style="text-align:right; margin-left: 50px; font-size: 30px; text-transform: uppercase;"   id="pro_n"></h4>
+
+            <img src="https://cdn-icons-png.flaticon.com/128/1828/1828640.png" style="width: 20px; height: 20px;" id="is">
+        </div>
+        
+        <div style="display: flex;" ><h4>followers : </h4<div id="follwers_s" style="margin-bottom: left;"></div></div>
+        <strong><p id="following_g" >Following :</p></strong>
+        <p id="Bio">Bio :</p>
+        <p id="loc">Location :</p>
+    </body>
+    <script>
+        let insta ={
+            "status":"Success",
+            "data":{
+                "profile-name":"sonu",
+                "is_celebrity" :true,
+                "profile_image": "https://images.pexels.com/photos/15437439/pexels-photo-15437439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "followers" :2000,
+                "following": 2002,
+                "bio": "This is my profile",
+                "location":"Ranchi,Jharkhand"
+
+            }
+        }
+        let pro_img=document.getElementById("pro_i");
+            pro_img.src=insta["data"]["profile_image"];
+
+        let pro=document.getElementById("pro_n");
+          pro.innerText=insta["data"]["profile-name"];
+
+        let cel=document.getElementById("is");
+
+        if(insta["data"]["is_celebrity"]==true){
+            //
+        } else {
+            cel.remove();
+        }
+        
+        let fwlrs=document.getElementById("follwers_s");
+            let oval = insta["data"]["followers"];
+            let bval = insta["data"]["followers"]/100000000;
+            let mval = insta["data"]["followers"]/1000000;
+            let kval = insta["data"]["followers"]/1000;
+            console.log(bval);
+            console.log(mval);
+            console.log(kval);
+            if(bval>=1){
+                fwlrs.innerText= parseInt(bval) + "B";
+            } else if (mval>=1){
+                fwlrs.innerText= parseInt(mval) + "M";
+            } else if(kval>=1){
+                fwlrs.innerText= parseInt(kval) + "K";
+            } else {
+                fwlrs.innerText= oval;
+            }
+            
+         let fwlng=document.getElementById("following_g");
+           let Oval=insta["data"]["location"];
+           let Bval=insta["data"]["location"]/100000000;
+           let Mval=insta["data"]["location"]/1000000;
+           let Kval=insta["data"]["location"]/1000;
+              console.log(Bval);
+              console.log(Mval);
+              console.log(Kval);
+              if(Bval>=1){
+                        fwlng.innerText=parent(Bval) +"B";
+              } else if(Mval>=1){
+                        fwlng.innerText=parent(Mval) +"M";
+              }else if(Kval>=1){
+                fwlng.innerText=parseInt(Kval) + "k";
+              } else{
+                fwlng.innerText=oval;
+              }
+
+            
+        let bio=document.getElementById("Bio");
+            bio.innerText=insta["data"]["bio"];
+        let loctn=document.getElementById("loc");
+            loctn.innerText=insta["data"]["location"];
+    </script>
+</html>
