@@ -55,27 +55,6 @@
 
 <body>
     <div style="max-width: 400px;" id="container">
-        <!-- item 1 -->
-        <div class="item">
-            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2"
-                alt="" id="pro-img" class="pro">
-
-            <!-- Content -->
-            <div class="content">
-                <!-- Name Time -->
-                <div class="name-time">
-                    <span id="name" class="NAME">Sonu</span>
-                    <span id="date" class="dat">2023-02-21 13:07</span>
-                </div>
-                <!-- Name Time -->
-                <span id="txt" class="Text">Hii, This is Sumit</span>
-
-            </div>
-            <!-- Content -->
-        </div>
-        <!-- item 1 -->
-
-
     </div>
 </body>
 <script>
@@ -156,13 +135,13 @@
     let con = document.getElementById("container");
     console.log(con);
 
-    function makeUserTile() {
+    function makeUserTile(dp_, name_, text_, time_) {
         let spanname = document.createElement("span");
         let spantime = document.createElement("span");
         spanname.className = "NAME";
         spantime.className = "dat";
-        spanname.innerText = "Sumit Kumar";
-        spantime.innerText = "2023-02-21 13:07";
+        spanname.innerText = name_;
+        spantime.innerText = time_;
         let divnametime = document.createElement("div");
         divnametime.className = "name-time";
         divnametime.appendChild(spanname);
@@ -170,7 +149,7 @@
 
         let spantext = document.createElement("span");
         spantext.className = "Text";
-        spantext.innerText = "hii,This is sumit";
+        spantext.innerText = text_;
 
         let divcontent = document.createElement("div");
         divcontent.className = "content";
@@ -180,7 +159,7 @@
 
         let img = document.createElement("img");
         img.className = "pro";
-        img.src = "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2";
+        img.src = dp_;
         let divitem = document.createElement("div");
         divitem.className = "item";
         divitem.appendChild(img);
@@ -189,15 +168,18 @@
 
 
     }
-    makeUserTile();
-    makeUserTile();
-    makeUserTile();
-    makeUserTile();
-    makeUserTile();
-    makeUserTile();
-    makeUserTile();
-    makeUserTile();
-    makeUserTile();
+    makeUserTile(
+        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
+        "Shyam",
+        "Hii, Shyam",
+        "2023-02-21 13:07"
+    );
+    makeUserTile(
+        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
+        "Raadhe",
+        "Hii, Raadhe",
+        "2023-02-21 13:07"
+    );
 
 </script>
 
