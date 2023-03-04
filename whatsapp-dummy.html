@@ -58,7 +58,7 @@
     </div>
 </body>
 <script>
-    let chat = {
+    let chatdata = {
         "status": "Success",
         "data": {
             "chat-list": [
@@ -107,6 +107,27 @@
                     ]
                 },
                 {
+                    "_id": "chat000004",
+                    "user": {
+                        "id": "user00000u4",
+                        "name": "Shanya Mirza",
+                        "profile-image-url": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2"
+                    },
+                    "messages": [
+                        {
+                            "_id": "m001",
+                            "user": "user00000u4",
+                            "text": " I wouldn't be surprised if cats understood it but just didn't care, LOL.",
+                            "created_at": "2023-02-19T05:13:07.914Z"
+                        },
+                        {
+                            "_id": "m002",
+                            "user": "user00000u1",
+                            "text": "  You must have ESP. I was going to tell you teh same thing! I have a sad story to tell there are less tigers living in the wild in Asia than as pets in the US.",
+                            "created_at": "2023-02-20T05:13:07.914Z"
+                        }
+                    ]
+                }, {
                     "_id": "chat000003",
                     "user": {
                         "id": "user00000u4",
@@ -128,6 +149,7 @@
                         }
                     ]
                 }
+
             ],
             "counts": 3
         }
@@ -168,19 +190,24 @@
 
 
     }
-    makeUserTile(
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
-        "Shyam",
-        "Hii, Shyam",
-        "2023-02-21 13:07"
-    );
-    makeUserTile(
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
-        "Raadhe",
-        "Hii, Raadhe",
-        "2023-02-21 13:07"
-    );
 
+
+    function main() {
+        for (let i = 0; i < chatdata["data"]["chat-list"].length; i++) {
+            let dp = chatdata["data"]["chat-list"][i]['user']['profile-image-url'];
+            let name = chatdata["data"]["chat-list"][i]['user']['name'];
+            let timedate = chatdata["data"]["chat-list"][i]['messages'][0]['created_at'];
+            let ms = Date.parse(timedate);
+            let text = chatdata["data"]["chat-list"][i]['messages'][0]['text'];
+            makeUserTile(
+                dp,
+                name,
+                text,
+                ms
+            );
+        }
+    }
+    main();
 </script>
 
 </html>

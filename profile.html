@@ -70,6 +70,7 @@
 </body>
 <script>
     let profile = {
+        "status": "Success",
         "user-id": 320,
         "first-name": "Sumit",
         "last-name": "Kumar",
@@ -95,7 +96,7 @@
         Proimg.src = profile["profile-image-url"];
         let Name = document.getElementById("name");
         Name.innerText = profile["first-name"] + " " + profile["last-name"] + " ";
-        // let Last = document.getElementById("last");
+        // let Last = document.getElementById("last");c
         // Last.innerText = 
         let Gen = document.getElementById("Gender");
 
@@ -123,7 +124,12 @@
         Folwng.innerText = profile["connections"] + " connections";
     }
 
-    setup();
+    if (profile['status'] == "Success") {
+        setup();
+    } else {
+        document.body.innerText = "Something went wrong";
+    }
+
 </script>
 
 </html>

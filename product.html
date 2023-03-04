@@ -79,36 +79,35 @@
 
     let ratingDiv = document.getElementById("rating-div");
 
-    for (let i = 1; i <=5; i++) {
-        
+    for (let i = 1; i <= 5; i++) {
+
         let imgstr = document.createElement("img");
-        if(i<=data["rating"])
-        {
+        if (i <= data["rating"]) {
             imgstr.src = active_star;
         } else {
             imgstr.src = inactive_star;
         }
-        imgstr.style.width=20;
-        imgstr.style.height=20;
+        imgstr.style.width = 20;
+        imgstr.style.height = 20;
         ratingDiv.appendChild(imgstr);
-    }    
-    
+    }
+
     let imageListUi = document.getElementById("image-list-div");
 
     console.log(data["images"].length);
 
     for (let i = 0; i < data["images"].length; i++) {
 
-            
-       let curImage = document.createElement("img");
+
+        let curImage = document.createElement("img");
         curImage.src = data["images"][i];
-        curImage.style.padding=5;
-        curImage.style.width=130;
-        curImage.style.height=130;
+        curImage.style.padding = 5;
+        curImage.style.width = 130;
+        curImage.style.height = 130;
         imageListUi.appendChild(curImage);
-    
+
     }
-        
+
 </script>
 
 </html>
